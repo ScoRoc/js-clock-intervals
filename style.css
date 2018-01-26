@@ -25,6 +25,10 @@ body {
   border-radius: 50px;
 }
 
+.displayNone {
+  display: none;
+}
+
 #clock {
 }
 

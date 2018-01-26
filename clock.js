@@ -50,6 +50,7 @@ var bodyColor = setInterval(function () {
 }
 }, 1000);
 
+var timerDoneFlash;
 var timerDone = function() {
 	var timerFlash1 = document.getElementById('timerFlash1');
 	timerFlash1.style.backgroundColor === "white" ? timerFlash1.style.backgroundColor = "red" : timerFlash1.style.backgroundColor = "white";
@@ -61,13 +62,16 @@ var startTimer = function () {
   var secInput = document.getElementById('secInput').value;
   // setTimeout(clearInterval(timerDoneFlash), (secInput * 1000) + 5000);
   setTimeout(function() {
-		var timerDoneFlash = setInterval(timerDone, 400);
+		timerDoneFlash = setInterval(timerDone, 400);
 	}, (secInput * 1000));
 };
 
 var resetTimer = function () {
-  var timerFlash1 = document.getElementById('timerFlash1');
-  timerFlash1.style.backgroundColor = "tra"
+  clearInterval(timerDoneFlash);
+	timerFlash1.style.backgroundColor = "transparent";
+	timerFlash1.style.borderColor = "transparent";
+	timerText.style.color = "transparent";
+
 };
 
 //Working with Minute hand rotating backwards
