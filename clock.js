@@ -50,22 +50,24 @@ var bodyColor = setInterval(function () {
 }
 }, 1000);
 
+var timerDone = function() {
+	var timerFlash1 = document.getElementById('timerFlash1');
+	timerFlash1.style.backgroundColor === "white" ? timerFlash1.style.backgroundColor = "red" : timerFlash1.style.backgroundColor = "white";
+	var timerText = document.getElementById('timerText');
+	timerFlash1.style.backgroundColor === "white" ? timerText.style.color = "red" : timerText.style.color = "white";
+};
+
 var startTimer = function () {
   var secInput = document.getElementById('secInput').value;
-  var timerDone = function() {
-    var timerFlash1 = document.getElementById('timerFlash1');
-    timerFlash1.style.backgroundColor === "white" ? timerFlash1.style.backgroundColor = "red" : timerFlash1.style.backgroundColor = "white";
-    var timerText = document.getElementById('timerText');
-    timerFlash1.style.backgroundColor === "white" ? timerText.style.color = "red" : timerText.style.color = "white";
-  };
-  var timerDoneFlash = setInterval(timerDone, 400);
   // setTimeout(clearInterval(timerDoneFlash), (secInput * 1000) + 5000);
-  setTimeout(timerDoneFlash, (secInput * 1000));
+  setTimeout(function() {
+		var timerDoneFlash = setInterval(timerDone, 400);
+	}, (secInput * 1000));
 };
 
 var resetTimer = function () {
   var timerFlash1 = document.getElementById('timerFlash1');
-  timerFlash1.style.backgroundColor = "transparent"
+  timerFlash1.style.backgroundColor = "tra"
 };
 
 //Working with Minute hand rotating backwards
