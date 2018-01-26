@@ -6,12 +6,25 @@
     <link rel="stylesheet" href="style.css" />
     <script src="clock.js"></script>
   </head>
-  <body>
+  <body id="body">
     <div id="clock">
       <img id="face" src="img/clockface.png"/>
       <img id="second" src="img/second-hand.png"/>
       <img id="minute" src="img/minute-hand.png"/>
       <img id="hour" src="img/hour-hand.png"/>
     </div>
+    <div class="timerDone" id="timerFlash1">
+      <div id="timerFlash2">
+      <h2 id="timerText">TIMER DONE!!</h2>
+      </div>
+    </div>
+    <div class="timer">
+      <h3>Timer</h3>
+      <label for="secInput">Seconds in numbers</label>
+      <input type="text" name="secInput" id="secInput" placeholder="example: 30">
+      <button onclick="startTimer()" type="button" id="timerButton">Start timer</button>
+      <button type="button" onclick="resetTimer()">Reset timer</button>
+    </div>
+
   </body>
 </html>
